@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.png"}}">
+
+    <!--[if lt IE 9]>
+    <script src="http://s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+    <script type="text/javascript" src="{{asset "js/html5shiv.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/css3-mediaqueries.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/selectivizr-min.js"}}"></script>
+    <![endif]-->
+
+    {{! Styles}}
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed|Poly:400,400italic' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/ghostship.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/prettify/sunburst.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+    <div id="blog_cover_willsong" class="bkg-cover" 
+    {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}></div>
+
+    {{{body}}}
+
+    {{> footer}}
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! Javascript files for Willsong }}
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/prettify.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/main.js"}}"></script>
+
+</body>
+</html>
